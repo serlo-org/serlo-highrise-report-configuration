@@ -12,3 +12,10 @@
         state: directory
         owner: "{{ user }}"
         mode: 0755
+
+    - name: Store .htaccess file on server
+      template:
+        src: htaccess
+        dest: "{{ target }}/.htaccess"
+        mode: 0400
+        owner: "{{ user }}"

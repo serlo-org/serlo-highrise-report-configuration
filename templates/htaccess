@@ -1,0 +1,8 @@
+AuthName 'Serlo Team Overview'
+
+AuthType Digest
+AuthDigestProvider file
+AuthDigestDomain /
+AuthUserFile {{ target }}/.htdigest
+
+Require valid-user
