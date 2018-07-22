@@ -1,12 +1,14 @@
 - hosts: webserver
-  environment:
-    PYTHONPATH: /home/s/Stephan.Kulla/simplejson
   vars:
     user: Stephan.Kulla
+    home: /home/s/{{ user }}
+    target: "{{ home }}/serlo"
+  environment:
+    PYTHONPATH: "{{ home }}/simplejson"
   tasks:
     - name: Create directory for team overview
       file:
-        path: "~/serlo"
+        path: "{{ target }}"
         state: directory
         owner: "{{ user }}"
         mode: 0755
