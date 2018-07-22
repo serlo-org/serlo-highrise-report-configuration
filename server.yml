@@ -1,3 +1,12 @@
 - hosts: webserver
   environment:
     PYTHONPATH: /home/s/Stephan.Kulla/simplejson
+  vars:
+    user: Stephan.Kulla
+  tasks:
+    - name: Create directory for team overview
+      file:
+        path: "~/serlo"
+        state: directory
+        owner: "{{ user }}"
+        mode: 0755
