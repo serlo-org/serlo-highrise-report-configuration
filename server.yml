@@ -19,3 +19,10 @@
         dest: "{{ target }}/.htaccess"
         mode: 0400
         owner: "{{ user }}"
+
+    - name: Store .htdigest file on server
+      copy:
+        src: htdigest
+        dest: "{{ target }}/.htdigest"
+        mode: 0400
+        owner: "{{ user }}"
